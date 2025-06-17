@@ -42,3 +42,16 @@ function update() {
 }
 
 setInterval(update, 1000);
+const marketSelect = document.getElementById('marketSelect');
+const timeframeSelect = document.getElementById('timeframeSelect');
+const marketInfo = document.getElementById('marketInfo');
+
+function updateMarketInfo() {
+  const market = marketSelect.value;
+  const timeframe = timeframeSelect.value;
+  marketInfo.innerText = `Market: ${market} | Timeframe: ${timeframe}`;
+}
+
+marketSelect.addEventListener('change', updateMarketInfo);
+timeframeSelect.addEventListener('change', updateMarketInfo);
+updateMarketInfo();
